@@ -5,6 +5,7 @@ const { Engineer } = require("./src/EmployeeTypes");
 const { Intern } = require("./src/EmployeeTypes");
 
 let teamMembers = [];
+let newTeamMember = true;
 
 const aboutManager = [
   {
@@ -90,29 +91,59 @@ function newManager() {
       data.officeNumber
     );
     teamMembers.push(anotherManager);
+    newEmployee();
   });
 }
 
 function newEmployee() {
   inquirer.prompt(employeeType).then((data) => {
-    if (data.type === "No more employees at this time") {
-      console.log("team is built");
-      console.log(teamMembers);
-    } else if (data.type === "Engineer") {
-      inquirer.prompt(aboutEngineer).then((data) => {
-        anotherEngineer = new Engineer(
-          data.name,
-          data.id,
-          data.email,
-          data.github
-        );
-        teamMembers.push(anotherEngineer);
-      });
-    } else if (data.type === "Intern") {
-      inquirer.prompt(aboutIntern).then((data) => {
-        anotherIntern = new Intern(data.name, data.id, data.email, data.school);
-        teamMembers.push(anotherIntern);
-      });
+    switch (data.type) {
+      case "No more employees at this time":
+        console.log("team is built");
+        console.log(teamMembers);
+        break;
+
+      case "Engineer":
+        inquirer.prompt(aboutEngineer).then((data) => {
+          anotherEngineer = new Engineer(
+            data.name,
+            data.id,
+            data.email,
+            data.github
+          );
+          teamMembers.push(anotherEngineer);
+          newEmployee();
+        });
+
+        break;
+      case "Intern":
+        inquirer.prompt(aboutIntern).then((data) => {
+          anotherIntern = new Intern(
+            data.name,
+            data.id,
+            data.email,
+            data.school
+          );
+          teamMembers.push(anotherIntern);
+          newEmployee();
+        });
+
+        break;
     }
   });
 }
+
+// function newMembers() {
+//   if (newTeamMember === true) {
+//     newEmployee();
+//   } else {
+//     console.log("team is built");
+//     console.log(teamMembers);
+//   }
+// }
+
+newManager();
+
+// const init = new Promise(newManager());
+
+// init.then(newMembers());
