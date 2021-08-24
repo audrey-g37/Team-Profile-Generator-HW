@@ -5,7 +5,6 @@ const { Engineer } = require("./src/EmployeeTypes");
 const { Intern } = require("./src/EmployeeTypes");
 
 let teamMembers = [];
-let newTeamMember = true;
 
 const aboutManager = [
   {
@@ -133,17 +132,4 @@ function newEmployee() {
   });
 }
 
-// function newMembers() {
-//   if (newTeamMember === true) {
-//     newEmployee();
-//   } else {
-//     console.log("team is built");
-//     console.log(teamMembers);
-//   }
-// }
-
 newManager();
-
-// const init = new Promise(newManager());
-
-// init.then(newMembers());
