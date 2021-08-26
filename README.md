@@ -27,7 +27,7 @@ Run npm start when you're ready to build your team. Answer each prompt with the 
 
 ![Example Team File](./Assets/screenshot-of-generated.png)
 
-[Demo Video]()
+[Demo Video](https://drive.google.com/file/d/1Bd5n92cvEu-H3gyQSlRp_-Z1NQ3utA_p/view?usp=sharing)
 
 ## License
 
