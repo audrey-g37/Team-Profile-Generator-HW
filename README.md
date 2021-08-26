@@ -10,6 +10,7 @@ The first question for the user is about the 'manager'. Then, the user can add a
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Assets](#assets)
 - [License](#license)
 - [GitHub Profile](#github-profile)
 - [Contact by Email](#email)
@@ -22,9 +23,11 @@ Run npm i to install necessary libraries.
 
 Run npm start when you're ready to build your team. Answer each prompt with the exact text you wish to appear on the html file. The index.html will have text content after you select to not add any more employees. The links to the engineers' GitHub profiles will be active and, when clicked, will open the profile in a new tab. All email addresses will have a link which opens the default email app and creates a 'new' email to that address.
 
-[Demo Video]()
+## Assets
 
-![Demo Team File](./Assets/screenshot-of-generated.png)
+![Example Team File](./Assets/screenshot-of-generated.png)
+
+[Demo Video]()
 
 ## License
 
