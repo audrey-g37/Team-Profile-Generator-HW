@@ -7,58 +7,59 @@ let internCardData;
 let finalData;
 
 function managerCard(data) {
-  managerCardData = `<div class="card" style="width: 18rem">
+  managerCardData = `<div class="card whole-card" style="width: 18rem">
     <div class="card-body">
         <h3 class="card-title employee-name">${data.name}</h3>
-        <h6 class="card-subtitle employee-position mb-2 text-muted">Manager</h6>
+        <h6 class="card-subtitle employee-position mb-2">Manager</h6>
 
-    <div class="card">
+    <div class="card card-info">
        <ul class="list-group list-group-flush">
-           <li class="list-group-item info1">ID: ${data.id}"</li>
+           <li class="list-group-item info-id">ID: ${data.id}</li>
            <a href="mailto:${data.email}"
-                ><li class="list-group-item info2">
+                ><li class="list-group-item info-email">
                   Email: ${data.email}
                 </li></a>
-           <li class="list-group-item info3">Office Number: ${data.officeNumber}</li>
+           <li class="list-group-item info-office">Office Number: ${data.officeNumber}</li>
        </ul>
     </div>
    </div>
 </div>`;
 }
 function engineerCard(data) {
-  engineerCardData = `<div class="card" style="width: 18rem">
+  engineerCardData = `<div class="card whole-card" style="width: 18rem">
     <div class="card-body">
         <h3 class="card-title employee-name">${data.name}</h3>
-        <h6 class="card-subtitle employee-position mb-2 text-muted">Engineer</h6>
+        <h6 class="card-subtitle employee-position mb-2">Engineer</h6>
 
-    <div class="card">
+    <div class="card card-info">
        <ul class="list-group list-group-flush">
-           <li class="list-group-item info1">ID: ${data.id}</li>
-           <a href="mailto:${data.email}"
-           ><li class="list-group-item info2">
-             Email: ${data.email}
-           </li></a>
-           <a href = "https://github.com/${data.github}"><li class="list-group-item info3"> GitHub: ${data.github}</li></a>
-           <li class="list-group-item info3">GitHub: </li>
+           <li class="list-group-item info-id">ID: ${data.id}</li>
+           <a href="mailto:${data.email}">
+           <li class="list-group-item info-email">
+             Email: ${data.email}</li>
+           </a>
+           <a href = "https://github.com/${data.github}" target = "_blank">
+           <li class="list-group-item info-github"> GitHub: ${data.github}</li>
+           </a>
        </ul>
     </div>
    </div>
 </div>`;
 }
 function internCard(data) {
-  internCardData = `<div class="card" style="width: 18rem">
+  internCardData = `<div class="card whole-card" style="width: 18rem">
     <div class="card-body">
         <h3 class="card-title employee-name">${data.name}</h3>
-        <h6 class="card-subtitle employee-position mb-2 text-muted">Intern</h6>
+        <h6 class="card-subtitle employee-position mb-2">Intern</h6>
 
-    <div class="card">
+    <div class="card card-info">
        <ul class="list-group list-group-flush">
-           <li class="list-group-item info1">ID: ${data.id}</li>
+           <li class="list-group-item info-id">ID: ${data.id}</li>
            <a href="mailto:${data.email}"
-           ><li class="list-group-item info2">
+           ><li class="list-group-item info-email">
              Email: ${data.email}
            </li></a>
-           <li class="list-group-item info3">School: ${data.school}</li>
+           <li class="list-group-item info-school">School: ${data.school}</li>
        </ul>
     </div>
    </div>
@@ -78,9 +79,11 @@ function createPage(teamMembers, teamMembersType) {
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
           crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="style.css" />
         <title>Team Members</title>
       </head>
       <body>
+      <header id="header">My Team</header>
         <div class="container-fluid">`;
 
   let bottomSection = `</div>
@@ -93,9 +96,6 @@ function createPage(teamMembers, teamMembersType) {
 </html>`;
 
   let cards = [];
-
-  console.log(teamMembers);
-  console.log(teamMembersType);
 
   for (i = 0; i < teamMembersType.length; i++) {
     switch (teamMembersType[i]) {
@@ -115,8 +115,6 @@ function createPage(teamMembers, teamMembersType) {
         break;
     }
   }
-
-  console.log(cards);
 
   finalData = topSection + cards + bottomSection;
   fs.writeFile("./dist/index.html", finalData, (err) => {

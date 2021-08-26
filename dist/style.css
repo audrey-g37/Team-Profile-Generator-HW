@@ -1,0 +1,58 @@
+:root {
+  --extra-light: #1270b3;
+  --medium: #b3b209;
+  --dark: #ff1d19;
+  --light: #ffff19;
+}
+
+* {
+  background-color: rgb(247, 240, 230);
+}
+
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#header {
+  text-align: center;
+  font-size: 65px;
+  font-weight: 600;
+  padding: 15px;
+  background-color: var(--dark);
+  color: white;
+}
+
+.whole-card {
+  margin: 20px;
+  box-shadow: 10px 10px var(--light);
+}
+
+.card-body {
+  background-color: var(--extra-light);
+}
+
+.card-info {
+  margin-top: 20px;
+}
+
+.employee-name {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  background-color: var(--extra-light);
+  color: white;
+}
+
+.employee-position {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background-color: var(--dark);
+}
+
+.info-email:hover,
+.info-github:hover {
+  background-color: var(--medium);
+}
