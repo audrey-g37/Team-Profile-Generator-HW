@@ -1,18 +1,12 @@
 :root {
-  --extra-light: #1270b3;
-  --medium: #b3b209;
-  --dark: #ff1d19;
-  --light: #ffff19;
+  --extra-light: #559dcc;
+  --light: #cecc66;
+  --medium: #c4c135;
+  --dark: #e66868;
 }
 
-* {
+body {
   background-color: rgb(247, 240, 230);
-}
-
-.container-fluid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 #header {
@@ -24,9 +18,15 @@
   color: white;
 }
 
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .whole-card {
   margin: 20px;
-  box-shadow: 10px 10px var(--light);
+  box-shadow: 15px 15px var(--medium);
 }
 
 .card-body {
@@ -37,22 +37,37 @@
   margin-top: 20px;
 }
 
-.employee-name {
-  font-size: 30px;
-  font-weight: 600;
-  text-align: center;
-  background-color: var(--extra-light);
+.main-info {
+  background-color: var(--dark);
   color: white;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4%;
+}
+
+.employee-name {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
+  padding: 8px;
 }
 
 .employee-position {
   font-size: 20px;
-  text-align: center;
-  color: white;
-  background-color: var(--dark);
+  padding: 3px;
 }
 
 .info-email:hover,
 .info-github:hover {
-  background-color: var(--medium);
+  background-color: var(--light);
+}
+
+.info-id {
+  background-color: rgb(235, 235, 235);
+}
+.info-email {
+  background-color: rgb(207, 207, 207);
+}
+.info-3 {
+  background-color: rgb(182, 181, 181);
 }

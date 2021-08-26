@@ -9,9 +9,10 @@ let finalData;
 function managerCard(data) {
   managerCardData = `<div class="card whole-card" style="width: 18rem">
     <div class="card-body">
+    <div class = "main-info">
         <h3 class="card-title employee-name">${data.name}</h3>
         <h6 class="card-subtitle employee-position mb-2">Manager</h6>
-
+    </div>
     <div class="card card-info">
        <ul class="list-group list-group-flush">
            <li class="list-group-item info-id">ID: ${data.id}</li>
@@ -19,7 +20,7 @@ function managerCard(data) {
                 ><li class="list-group-item info-email">
                   Email: ${data.email}
                 </li></a>
-           <li class="list-group-item info-office">Office Number: ${data.officeNumber}</li>
+           <li class="list-group-item info-3 info-office">Office Number: ${data.officeNumber}</li>
        </ul>
     </div>
    </div>
@@ -28,9 +29,10 @@ function managerCard(data) {
 function engineerCard(data) {
   engineerCardData = `<div class="card whole-card" style="width: 18rem">
     <div class="card-body">
+    <div class = "main-info">
         <h3 class="card-title employee-name">${data.name}</h3>
         <h6 class="card-subtitle employee-position mb-2">Engineer</h6>
-
+    </div>
     <div class="card card-info">
        <ul class="list-group list-group-flush">
            <li class="list-group-item info-id">ID: ${data.id}</li>
@@ -39,7 +41,7 @@ function engineerCard(data) {
              Email: ${data.email}</li>
            </a>
            <a href = "https://github.com/${data.github}" target = "_blank">
-           <li class="list-group-item info-github"> GitHub: ${data.github}</li>
+           <li class="list-group-item info-3 info-github"> GitHub: ${data.github}</li>
            </a>
        </ul>
     </div>
@@ -49,9 +51,10 @@ function engineerCard(data) {
 function internCard(data) {
   internCardData = `<div class="card whole-card" style="width: 18rem">
     <div class="card-body">
+    <div class = "main-info">
         <h3 class="card-title employee-name">${data.name}</h3>
         <h6 class="card-subtitle employee-position mb-2">Intern</h6>
-
+    </div>
     <div class="card card-info">
        <ul class="list-group list-group-flush">
            <li class="list-group-item info-id">ID: ${data.id}</li>
@@ -59,7 +62,7 @@ function internCard(data) {
            ><li class="list-group-item info-email">
              Email: ${data.email}
            </li></a>
-           <li class="list-group-item info-school">School: ${data.school}</li>
+           <li class="list-group-item info-3 info-school">School: ${data.school}</li>
        </ul>
     </div>
    </div>
@@ -116,7 +119,7 @@ function createPage(teamMembers, teamMembersType) {
     }
   }
 
-  finalData = topSection + cards + bottomSection;
+  finalData = topSection + cards.join(" ") + bottomSection;
   fs.writeFile("./dist/index.html", finalData, (err) => {
     err ? console.log(err) : console.log("File was created.");
   });
