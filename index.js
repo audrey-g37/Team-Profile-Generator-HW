@@ -1,10 +1,11 @@
 const inquirer = require("inquirer");
-const Employee = require("./src/Employee");
+const generateTeamPage = require("./src/generateTeamPage");
 const { Manager } = require("./src/EmployeeTypes");
 const { Engineer } = require("./src/EmployeeTypes");
 const { Intern } = require("./src/EmployeeTypes");
 
 let teamMembers = [];
+let teamMembersType = [];
 
 const aboutManager = [
   {
@@ -90,6 +91,7 @@ function newManager() {
       data.officeNumber
     );
     teamMembers.push(anotherManager);
+    teamMembersType.push("Manager");
     newEmployee();
   });
 }
@@ -99,7 +101,7 @@ function newEmployee() {
     switch (data.type) {
       case "No more employees at this time":
         console.log("team is built");
-        console.log(teamMembers);
+        generateTeamPage(teamMembers, teamMembersType);
         break;
 
       case "Engineer":
@@ -111,6 +113,7 @@ function newEmployee() {
             data.github
           );
           teamMembers.push(anotherEngineer);
+          teamMembersType.push("Engineer");
           newEmployee();
         });
 
@@ -124,6 +127,7 @@ function newEmployee() {
             data.school
           );
           teamMembers.push(anotherIntern);
+          teamMembersType.push("Intern");
           newEmployee();
         });
 
