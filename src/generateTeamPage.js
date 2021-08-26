@@ -14,8 +14,11 @@ function managerCard(data) {
 
     <div class="card">
        <ul class="list-group list-group-flush">
-           <li class="list-group-item info1">ID: ${data.id}</li>
-           <li class="list-group-item info2">Email: ${data.email}</li>
+           <li class="list-group-item info1">ID: ${data.id}"</li>
+           <a href="mailto:${data.email}"
+                ><li class="list-group-item info2">
+                  Email: ${data.email}
+                </li></a>
            <li class="list-group-item info3">Office Number: ${data.officeNumber}</li>
        </ul>
     </div>
@@ -31,8 +34,12 @@ function engineerCard(data) {
     <div class="card">
        <ul class="list-group list-group-flush">
            <li class="list-group-item info1">ID: ${data.id}</li>
-           <li class="list-group-item info2">Email: ${data.email}</li>
-           <li class="list-group-item info3">GitHub: ${data.github}</li>
+           <a href="mailto:${data.email}"
+           ><li class="list-group-item info2">
+             Email: ${data.email}
+           </li></a>
+           <a href = "https://github.com/${data.github}"><li class="list-group-item info3"> GitHub: ${data.github}</li></a>
+           <li class="list-group-item info3">GitHub: </li>
        </ul>
     </div>
    </div>
@@ -47,7 +54,10 @@ function internCard(data) {
     <div class="card">
        <ul class="list-group list-group-flush">
            <li class="list-group-item info1">ID: ${data.id}</li>
-           <li class="list-group-item info2">Email: ${data.email}</li>
+           <a href="mailto:${data.email}"
+           ><li class="list-group-item info2">
+             Email: ${data.email}
+           </li></a>
            <li class="list-group-item info3">School: ${data.school}</li>
        </ul>
     </div>
@@ -82,10 +92,12 @@ function createPage(teamMembers, teamMembersType) {
   </body>
 </html>`;
 
-  let cards;
+  let cards = [];
+
+  console.log(teamMembers);
+  console.log(teamMembersType);
 
   for (i = 0; i < teamMembersType.length; i++) {
-    cards = [];
     switch (teamMembersType[i]) {
       case "Manager":
         managerCard(teamMembers[i]);
@@ -103,7 +115,9 @@ function createPage(teamMembers, teamMembersType) {
         break;
     }
   }
-  cards = cards;
+
+  console.log(cards);
+
   finalData = topSection + cards + bottomSection;
   fs.writeFile("./dist/index.html", finalData, (err) => {
     err ? console.log(err) : console.log("File was created.");
