@@ -1,0 +1,73 @@
+:root {
+  --extra-light: #559dcc;
+  --light: #cecc66;
+  --medium: #c4c135;
+  --dark: #e66868;
+}
+
+body {
+  background-color: rgb(247, 240, 230);
+}
+
+#header {
+  text-align: center;
+  font-size: 65px;
+  font-weight: 600;
+  padding: 15px;
+  background-color: var(--dark);
+  color: white;
+}
+
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.whole-card {
+  margin: 20px;
+  box-shadow: 15px 15px var(--medium);
+}
+
+.card-body {
+  background-color: var(--extra-light);
+}
+
+.card-info {
+  margin-top: 20px;
+}
+
+.main-info {
+  background-color: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4%;
+}
+
+.employee-name {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
+  padding: 8px;
+}
+
+.employee-position {
+  font-size: 20px;
+  padding: 3px;
+}
+
+.info-email:hover,
+.info-github:hover {
+  background-color: var(--light);
+}
+
+.info-id {
+  background-color: rgb(235, 235, 235);
+}
+.info-email {
+  background-color: rgb(207, 207, 207);
+}
+.info-3 {
+  background-color: rgb(182, 181, 181);
+}
