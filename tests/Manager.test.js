@@ -1,10 +1,13 @@
 const { Manager } = require("../src/EmployeeTypes");
 
 describe("Manager", () => {
-  describe("officeNumber", () => {
-    it("should store the office number of the Manager", () => {
+  describe("constructManager", () => {
+    it("should store the arguments passed of the manager", () => {
       const newManager = new Manager("Audrey", "2070999", "a@gmail.com", "173");
 
+      expect(newManager.name).toEqual("Audrey");
+      expect(newManager.id).toEqual("2070999");
+      expect(newManager.email).toEqual("a@gmail.com");
       expect(newManager.officeNumber).toEqual("173");
     });
   });
