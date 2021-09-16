@@ -2,7 +2,7 @@
 
 ## Description
 
-The purpose of this app is to create an html file with each employee's information. This app prompts the user with questions in the command line and then writes the index.html file (in the dist directory) based on the user's input. The content of the index.html file is replaced evertime the app is run.
+The purpose of this app is to create an html file with each employee's information. This app prompts the user with questions in the command line and then writes the index.html file (in the 'dist' directory) based on the user's input. The content of the index.html file is replaced everytime the app is run.
 
 The first question for the user is about the 'manager'. Then, the user can add an 'intern,' 'engineer,' or choose to not add anymore employees. The user can continue to add interns or engineers repeatedly until they select the third option of not adding anymore employees.
 
